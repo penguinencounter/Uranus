@@ -4,10 +4,56 @@
   <meta charset="UTF-8">
   <title>Uranus</title>
   <link rel="stylesheet" href="./style.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="./main.mjs" type="module"></script>
 </head>
 <body>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js'></script><script  src="./script.js"></script>
-
+  <div id="timer">?</div>
+  <div id="configure" class="collapsed">
+    <div id="tab" class="when-collapsed">Configure</div>
+    <div id="configure-main-wrapper" class="when-collapsed">
+      <div class="padded">
+        <h1>Configuration</h1>
+        <h2>Bell schedules</h2>
+        <div>
+          <div class="dotw-picker">
+            <button class="day-of-the-week">Su</button>
+            <button class="day-of-the-week">M</button>
+            <button class="day-of-the-week selected">T</button>
+            <button class="day-of-the-week">W</button>
+            <button class="day-of-the-week selected">Th</button>
+            <button class="day-of-the-week">F</button>
+            <button class="day-of-the-week">Sa</button>
+          </div>  
+        </div>
+        <div>
+          <div class="dotw-picker">
+            <button class="day-of-the-week">Su</button>
+            <button class="day-of-the-week selected">M</button>
+            <button class="day-of-the-week">T</button>
+            <button class="day-of-the-week">W</button>
+            <button class="day-of-the-week">Th</button>
+            <button class="day-of-the-week selected">F</button>
+            <button class="day-of-the-week">Sa</button>
+          </div>  
+        </div>
+        <div>
+          <div class="dotw-picker">
+            <button class="day-of-the-week">Su</button>
+            <button class="day-of-the-week">M</button>
+            <button class="day-of-the-week">T</button>
+            <button class="day-of-the-week selected">W</button>
+            <button class="day-of-the-week">Th</button>
+            <button class="day-of-the-week">F</button>
+            <button class="day-of-the-week">Sa</button>
+          </div>
+        </div>
+        <h2>Classes</h2>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

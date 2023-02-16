@@ -6,6 +6,129 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #202020, #404040);
+  background: linear-gradient(to bottom, hsl(270, 80%, 20%), hsl(220, 80%, 20%));
   overflow: hidden;
+  font-family: 'Rubik', sans-serif;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#timer {
+  font-size: 3rem;
+}
+
+#configure {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#configure #tab {
+  margin-left: 20px;
+  cursor: pointer;
+  padding: 5px 0;
+  background-color: #00000080;
+  transition: padding, background-color;
+  transition-duration: 200ms;
+  border-radius: 5px 5px 0 0;
+  min-width: max-content;
+  width: min(200px, 20vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.padded {
+  padding: 10px;
+}
+
+#configure #tab:hover {
+  padding: 10px 0;
+}
+#configure.opened #tab {
+  background-color: #000000b0;
+}
+
+#configure #configure-main-wrapper {
+  background: linear-gradient(to bottom, #000000b0, #000000);
+  transition: height 300ms cubic-bezier(.2,.8,.4,1.2);
+  height: 0;
+  overflow: hidden hidden;
+}
+#configure.opened #configure-main-wrapper {
+  height: calc(min(100vh - 2em, max(80vh, 25em)));
+  overflow: hidden scroll;
+}
+
+#configure #tab::after {
+  opacity: 0;
+  content: "";
+  background: linear-gradient(135deg, #8000ff80 0%, transparent 50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 5px 5px 0 0;
+  transition: opacity 200ms;
+}
+
+#configure #tab:hover::after {
+  opacity: 100%;
+}
+
+#configure.collapsed *:not(.when-collapsed) {
+  display: none;
+}
+#configure.collapsed #configure-main-wrapper * {
+  display: none;
+}
+
+#configure.opened .only-when-collapsed {
+  display: none;
+}
+
+h1, h2 {
+  margin: 5px 0;
+}
+h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.dotw-picker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.day-of-the-week {
+  display: block;
+  width: 35px;
+  height: 35px;
+  font-size: 1.25rem;
+  border: 1px solid;
+  border-color: #303030;
+  color: #606060;
+  font-family: 'Rubik', sans-serif;
+  border-radius: 99999px; /* circle */
+  background-color: #18181850;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 200ms, border-color 200ms;
+}
+.day-of-the-week.selected {
+  border-color: #00ff59;
+  color: #00ff59;
+  background-color: #00803050;
+}
+
+.dotw-picker .day-of-the-week + .day-of-the-week {
+  margin-left: 5px;
 }
