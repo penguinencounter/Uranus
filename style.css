@@ -101,6 +101,33 @@ h3, h4, h5, h6 {
   margin: 0;
 }
 
+#main .schedule + .schedule {
+  margin-top: 5px;
+}
+
+.schedule {
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #ffffff10;
+  border-radius: 20px;
+  width: max-content;
+  display: grid;
+}
+
+.schedule-title {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  align-items: center;
+  gap: 20px;
+}
+
+.schedule-title span {
+  width: max-content;
+  min-width: 200px;
+}
+
 .dotw-picker {
   display: flex;
   flex-direction: row;
@@ -109,9 +136,9 @@ h3, h4, h5, h6 {
 }
 .day-of-the-week {
   display: block;
-  width: 35px;
-  height: 35px;
-  font-size: 1.25rem;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
   border: 1px solid;
   border-color: #303030;
   color: #606060;
@@ -121,12 +148,34 @@ h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 200ms, border-color 200ms;
+  transition: background-color 200ms, border-color 200ms, color 200ms;
+  cursor: pointer;
 }
 .day-of-the-week.selected {
   border-color: #00ff59;
   color: #00ff59;
   background-color: #00803050;
+}
+.day-of-the-week.error.error {
+  border-color: #ff5900;
+  color: #ff5900;
+  background-color: #80300050;
+}
+
+.day-of-the-week:hover {
+  border-color: #606060;
+  color: #b0b0b0;
+  background-color: #40404050;
+}
+.day-of-the-week.selected:hover {
+  border-color: #00ff59;
+  color: #00ff00;
+  background-color: #00ff6050;
+}
+.day-of-the-week.error.error:hover {
+  border-color: #ff8000;
+  color: #ff8000;
+  background-color: #ff600050;
 }
 
 .dotw-picker .day-of-the-week + .day-of-the-week {
