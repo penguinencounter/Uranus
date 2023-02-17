@@ -100,4 +100,16 @@ window.addEventListener("load", () => {
             toggleTab();
         }
     })
+
+    (async () => {
+        const versionBox = document.getElementById("version");
+        const resp = await fetch("./commit.txt")
+        if (resp.status !== 200) {
+            versionBox.innerHTML = "unknown";
+            return;
+        }
+        let text = await resp.text()
+        text = text.replace(/\s/g, '')
+        versionBox.innerHTML = text;
+    })()
 });

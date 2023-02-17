@@ -237,3 +237,12 @@ h3, h4, h5, h6 {
 .dotw-picker .day-of-the-week + .day-of-the-week {
   margin-left: 5px;
 }
+
+#version {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: max-content;
+  height: max-content;
+  color: #ffffff30;
+}
