@@ -212,7 +212,7 @@ h3, h4, h5, h6 {
   color: #00ff59;
   background-color: #00803050;
 }
-.day-of-the-week.error.error {
+.day-of-the-week.selected.error {
   border-color: #ff5900;
   color: #ff5900;
   background-color: #80300050;
@@ -228,7 +228,7 @@ h3, h4, h5, h6 {
   color: #00ff00;
   background-color: #00ff6050;
 }
-.day-of-the-week.error.error:hover {
+.day-of-the-week.selected.error:hover {
   border-color: #ff8000;
   color: #ff8000;
   background-color: #ff600050;

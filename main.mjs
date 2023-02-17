@@ -21,11 +21,24 @@ window.addEventListener("load", () => {
         toggleTab();
     });
 
+    function checkOverload() {
+        for (let i = 0; i < 7; i++) {
+            const matches = document.querySelectorAll(`button.day-of-the-week.selected[data-day="${i}"]`).length;
+            const allTargets = document.querySelectorAll(`button.day-of-the-week[data-day="${i}"]`);
+            if (matches > 1) {
+                allTargets.forEach(element => element.classList.add("error"))
+            } else {
+                allTargets.forEach(element => element.classList.remove("error"))
+            }
+        }
+    }
+
     function refreshScheduleList() {
         let childNo = 1;
         for (let child of scheduleList.children) {
             child.querySelector(".schedule-title > span").innerHTML = `Schedule #${childNo++}`;
         }
+        checkOverload();
     }
 
     function newSchedule() {
@@ -51,6 +64,7 @@ window.addEventListener("load", () => {
                 } else {
                     ev.target.classList.add("selected");
                 }
+                checkOverload();
             })
             button.dataset.day = i.toString();
             picker.appendChild(button);
