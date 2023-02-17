@@ -17,12 +17,13 @@ html, body {
 }
 
 #configure {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   display: flex;
   flex-direction: column;
+  z-index: 2;
 }
 
 #configure #tab {
@@ -247,7 +248,7 @@ h3, h4, h5, h6 {
   height: max-content;
   color: transparent;
   background: linear-gradient(to right, hsl(90, 80%, 50%), hsl(180, 80%, 50%) 100%);
-  z-index: 100;
+  z-index: 1;
   text-decoration: none;
   background-clip: text;
   -webkit-background-clip: text;
@@ -269,6 +270,7 @@ h3, h4, h5, h6 {
   background: linear-gradient(to right, hsl(90, 80%, 50%), hsl(180, 80%, 50%) 100%);
   transition: clip-path 200ms;
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  border-radius: 5px;
 }
 #version:hover::after {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);

@@ -102,9 +102,15 @@ window.addEventListener("load", () => {
     })
 
     const versionBox = document.getElementById("version");
-    fetch("commit.txt").then((resp) => resp.text())
+    versionBox.innerHTML = "loading..."
+    fetch("commit.txt", {cache: "no-store"}).then((resp) => {
+        if (resp.status == 200) {
+            return resp.text().then(resp => resp.replace(/\s/g, ''))
+        } else {
+            return 'unknown version'
+        }
+    }, () => "error")
         .then((result) => {
-            result = result.replace(/\s/g, '')
             versionBox.innerHTML = result;
         })
 });
