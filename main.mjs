@@ -101,15 +101,10 @@ window.addEventListener("load", () => {
         }
     })
 
-    (async () => {
-        const versionBox = document.getElementById("version");
-        const resp = await fetch("./commit.txt")
-        if (resp.status !== 200) {
-            versionBox.innerHTML = "unknown";
-            return;
-        }
-        let text = await resp.text()
-        text = text.replace(/\s/g, '')
-        versionBox.innerHTML = text;
-    })()
+    const versionBox = document.getElementById("version");
+    fetch("commit.txt").then((resp) => resp.text())
+        .then((result) => {
+            result = result.replace(/\s/g, '')
+            versionBox.innerHTML = result;
+        })
 });
