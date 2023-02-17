@@ -240,10 +240,21 @@ h3, h4, h5, h6 {
 
 #version {
   position: fixed;
+  display: block;
   bottom: 20px;
   right: 20px;
   width: max-content;
   height: max-content;
-  color: #ffffff80;
+  background: linear-gradient(to right, hsl(0, 80%, 50%) 0%, hsl(36, 80%, 50%) 10%, hsl(72, 80%, 50%) 20%, hsl(108, 80%, 50%) 30%, hsl(144, 80%, 50%) 40%, hsl(180, 80%, 50%) 50%, hsl(216, 80%, 50%) 60%, hsl(252, 80%, 50%) 70%, hsl(288, 80%, 50%) 80%, hsl(324, 80%, 50%) 90%, hsl(360, 80%, 50%) 100%);
   z-index: 100;
+  text-decoration: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #ffffff80;
+  font-size: 2rem;
+  transition: color 200ms;
+}
+#version:hover {
+  color: transparent;
+  text-decoration: underline #ffffff;
 }
