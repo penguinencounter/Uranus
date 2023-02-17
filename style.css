@@ -57,7 +57,7 @@ html, body {
 
 #configure #configure-main-wrapper {
   background: linear-gradient(to bottom, #000000b0, #000000);
-  transition: height 300ms cubic-bezier(.2,.8,.4,1.2);
+  transition: height 300ms cubic-bezier(.2,.8,.4,1.1);
   height: 0;
   overflow: hidden hidden;
 }
@@ -111,6 +111,7 @@ h3, h4, h5, h6 {
   background-color: #ffffff10;
   border-radius: 20px;
   width: max-content;
+  max-width: calc(100% - 20px);
   display: grid;
 }
 
@@ -118,18 +119,19 @@ h3, h4, h5, h6 {
   font-size: 20px;
   display: flex;
   flex-direction: row;
-  width: max-content;
   align-items: center;
   gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .schedule-title span {
-  width: max-content;
-  min-width: 200px;
+  width: 200px;
+  min-width: max-content;
 }
 
 .dotw-picker {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
