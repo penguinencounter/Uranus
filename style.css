@@ -10,9 +10,6 @@ html, body {
   overflow: hidden;
   font-family: 'Rubik', sans-serif;
   color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #timer {
@@ -44,8 +41,21 @@ html, body {
   position: relative;
 }
 
+#configure #tab::before {
+  content: "tab";
+  position: absolute;
+  font-family: monospace;
+  left: 102%;
+  font-size: 1rem;
+  padding: 2px 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px #000000;
+  background-color: #00000080;
+  color: #b0b0b0;
+}
+
 .padded {
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 #configure #tab:hover {
@@ -108,7 +118,7 @@ h3, h4, h5, h6 {
 .schedule {
   margin: 5px 0;
   padding: 10px;
-  background-color: #ffffff10;
+  background: linear-gradient(to right, #00ff8025 0%, #0080ff25 75%, #8000ff25 100%);
   border-radius: 20px;
   width: max-content;
   max-width: calc(100% - 20px);
@@ -136,13 +146,57 @@ h3, h4, h5, h6 {
   align-items: center;
   justify-content: flex-start;
 }
+
+.delete-schedule {
+  width: max-content;
+  height: 45px;
+  font-size: 20px;
+  border: 1px solid #b00000;
+  color: #ff0000;
+  font-family: 'Rubik', sans-serif;
+  border-radius: 99999px; /* circle */
+  background-color: #ff000050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 200ms, border-color 200ms, color 200ms;
+  cursor: pointer;
+  padding: 0 10px;
+}
+.delete-schedule:hover {
+    border-color: #ff0000;
+    color: #ff8080;
+    background-color: #ff000080;
+}
+
+.new-schedule {
+  width: max-content;
+  min-width: min(200px, 20vw);
+  height: 45px;
+  font-size: 20px;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  font-family: 'Rubik', sans-serif;
+  border-radius: 20px;
+  background-color: #00ff0050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 200ms, border-color 200ms, color 200ms;
+  cursor: pointer;
+  padding: 0 10px;
+}
+.new-schedule:hover {
+    border-color: #80ff80;
+    color: #80ff80;
+    background-color: #00ff0080;
+}
+
 .day-of-the-week {
-  display: block;
   width: 45px;
   height: 45px;
   font-size: 20px;
-  border: 1px solid;
-  border-color: #303030;
+  border: 1px solid #303030;
   color: #606060;
   font-family: 'Rubik', sans-serif;
   border-radius: 99999px; /* circle */
