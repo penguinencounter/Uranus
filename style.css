@@ -245,16 +245,31 @@ h3, h4, h5, h6 {
   right: 20px;
   width: max-content;
   height: max-content;
-  background: linear-gradient(to right, hsl(0, 80%, 50%) 0%, hsl(36, 80%, 50%) 10%, hsl(72, 80%, 50%) 20%, hsl(108, 80%, 50%) 30%, hsl(144, 80%, 50%) 40%, hsl(180, 80%, 50%) 50%, hsl(216, 80%, 50%) 60%, hsl(252, 80%, 50%) 70%, hsl(288, 80%, 50%) 80%, hsl(324, 80%, 50%) 90%, hsl(360, 80%, 50%) 100%);
+  color: transparent;
+  background: linear-gradient(to right, hsl(90, 80%, 50%), hsl(180, 80%, 50%) 100%);
   z-index: 100;
   text-decoration: none;
   background-clip: text;
   -webkit-background-clip: text;
-  color: #ffffff80;
   font-size: 2rem;
-  transition: color 200ms;
+  opacity: 50%;
+  transition: opacity 200ms;
 }
 #version:hover {
-  color: transparent;
-  text-decoration: underline #ffffff;
+  opacity: 100%;
+}
+
+#version::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 5px;
+  content: "";
+  background: linear-gradient(to right, hsl(90, 80%, 50%), hsl(180, 80%, 50%) 100%);
+  transition: clip-path 200ms;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+#version:hover::after {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
