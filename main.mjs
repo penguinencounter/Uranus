@@ -106,7 +106,7 @@ window.addEventListener("load", () => {
     const version = {local: null, remote: null}
     versionBox.innerHTML = "loading..."
     ;(async () => { // ASI breakage mandated semicolon
-        const response = await fetch("commit.txt");
+        const response = await fetch("commit.txt", {cache: "no-store"});
         if (response.status !== 200) {
             versionBox.innerHTML = "unknown";
             return;
@@ -120,7 +120,7 @@ window.addEventListener("load", () => {
         }
     })()
     ;(async () => { // ASI breakage mandated semicolon
-        const response = await fetch("https://api.github.com/repos/penguinencounter/Uranus/commits/main?per_page=1");
+        const response = await fetch("https://api.github.com/repos/penguinencounter/Uranus/commits/main?per_page=1", {cache: "no-store"});
         if (response.status !== 200) {
             versionBox.innerHTML = "api error";
             return;
