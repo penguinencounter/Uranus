@@ -296,7 +296,7 @@ h3, h4, h5, h6 {
 
 #version-remote::before {
     position: absolute;
-    bottom: 90%;
+    bottom: calc(1rem + 1em);
     left: 0;
     right: 0;
     content: "LATEST";
