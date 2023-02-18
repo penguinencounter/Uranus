@@ -101,16 +101,36 @@ window.addEventListener("load", () => {
         }
     })
 
-    const versionBox = document.getElementById("version");
+    const versionBox = document.getElementById("version-local");
+    const remoteBox = document.getElementById("version-remote");
+    const version = {local: null, remote: null}
     versionBox.innerHTML = "loading..."
-    fetch("commit.txt", {cache: "no-store"}).then((resp) => {
-        if (resp.status == 200) {
-            return resp.text().then(resp => resp.replace(/\s/g, ''))
-        } else {
-            return 'unknown version'
+    ;(async () => { // ASI breakage mandated semicolon
+        const response = await fetch("commit.txt");
+        if (response.status !== 200) {
+            versionBox.innerHTML = "unknown";
+            return;
         }
-    }, () => "error")
-        .then((result) => {
-            versionBox.innerHTML = result;
-        })
+        let text = await response.text();
+        text = text.replace(/\s/g, "");
+        version.local = text;
+        versionBox.innerHTML = text;
+        if (version.remote !== null && version.local !== version.remote) {
+            remoteBox.classList.remove("hidden");
+        }
+    })()
+    ;(async () => { // ASI breakage mandated semicolon
+        const response = await fetch("https://api.github.com/repos/penguinencounter/Uranus/commits/main?per_page=1");
+        if (response.status !== 200) {
+            versionBox.innerHTML = "api error";
+            return;
+        }
+        const json = await response.json();
+        const shortHash = json.sha.substring(0, 7);
+        version.remote = shortHash;
+        remoteBox.innerHTML = shortHash;
+        if (version.local !== null && version.local !== version.remote) {
+            remoteBox.classList.remove("hidden");
+        }
+    })()
 });

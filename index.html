@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <title>Uranus</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="./main.mjs" type="module"></script>
+    <meta charset="UTF-8">
+    <title>Uranus</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./main.mjs" type="module"></script>
 </head>
 <body>
-  <div id="timer">?</div>
-  <div id="configure" class="collapsed">
-    <div id="tab" class="when-collapsed">Configure</div>
-    <div id="configure-main-wrapper" class="when-collapsed">
-      <div id="main" class="padded">
-        <h1>Configuration</h1>
-        <h2>Bell schedules</h2>
-        <button class="new-schedule">New schedule</button>
-        <div id="all-schedules">
+    <div id="timer">?</div>
+    <div id="configure" class="collapsed">
+        <div id="tab" class="when-collapsed">Configure</div>
+        <div id="configure-main-wrapper" class="when-collapsed">
+            <div id="main" class="padded">
+                <h1>Configuration</h1>
+                <h2>Bell schedules</h2>
+                <button class="new-schedule">New schedule</button>
+                <div id="all-schedules">
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <a href="https://github.com/penguinencounter/Uranus" id="version">JS load error</div>
+    <div id="version">
+        <a href="https://github.com/penguinencounter/Uranus" id="version-local">loading...</a>
+        <span id="version-remote" class="hidden">connecting...</span>
+    </div>
 </body>
 </html>
