@@ -294,6 +294,20 @@ h3, h4, h5, h6 {
     background-image: linear-gradient(to right, hsl(0, 80%, 50%), hsl(45, 80%, 50%) 100%);
 }
 
+#version-remote::before {
+    position: absolute;
+    bottom: 90%;
+    left: 0;
+    right: 0;
+    content: "LATEST";
+    font-size: 1rem;
+    color: transparent;
+    text-decoration: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, hsl(0, 80%, 50%), hsl(45, 80%, 50%) 100%);
+}
+
 #version-local:hover::after, #version-remote:hover::after {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
